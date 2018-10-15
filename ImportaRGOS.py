@@ -15,5 +15,19 @@
 import sys, os, arcpy
 
 # Set input variables (Hard-wired)
-#inputFile = 'V:/ARGOSTracking/Data/ARGOSData/1997dg.txt'
-#outputFC = 'V:/ARGOSTracking/Scratch/ARGOStrack.shp'
+inputFile = 'V:\ARGOSTracking\data\ARGOSdata\1997dg.txt'
+outputFC = 'V:\ARGOSTracking\scratch\ARGOStrack.shp'
+
+#Open the ARGOS data file for reading
+inputFileObj = open(inputFile.'r')
+
+#Get the first line so we can loop
+lineString = inputFileObj.readline()
+-while lineString:
+
+    if "Date" in lineString:
+        print(lineString)
+
+     #Get the next line
+    lineString = inputFileObj.readline()
+    
