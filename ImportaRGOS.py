@@ -23,11 +23,32 @@ inputFileObj = open(inputFile.'r')
 
 #Get the first line so we can loop
 lineString = inputFileObj.readline()
--while lineString:
+while lineString:
 
     if "Date" in lineString:
         print(lineString)
 
+        #split the line spring into a list
+        lineList = lineString.split()
+        
+        #get attributes from first line
+        tagID = lineList[0]
+
+        #get the next line
+        line2String = inputFileObj.readline()
+        line2Data = line2String.split ()
+        print(line2Data)
+
+        #get attribute from second line
+        obsLat = line2Data[2]
+        obsLon = line2Data[5]
+        print(tagID, obsLat, obsLon)
+        break
+    
+
+
      #Get the next line
     lineString = inputFileObj.readline()
     
+#close the file object
+inputFileObj.close()
